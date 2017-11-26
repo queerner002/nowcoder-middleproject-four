@@ -44,7 +44,7 @@ public class HomeController {
     public String index(Model model,
                         @RequestParam(value = "pop", defaultValue = "0") int pop) {
         model.addAttribute("vos", getNews(0, 0, 10));
-        model.addAttribute("pop", pop);
+        model.addAttribute("pop", pop); //带pop的话页面的前端处理
         return "home";
     }
 

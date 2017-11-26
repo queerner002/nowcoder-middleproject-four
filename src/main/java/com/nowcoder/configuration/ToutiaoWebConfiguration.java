@@ -20,6 +20,7 @@ public class ToutiaoWebConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        //拦截器有先后顺序
         registry.addInterceptor(passportInterceptor); //全局的，所有页面需要处理，用于登陆验证
         registry.addInterceptor(loginRequiredInterceptor).addPathPatterns("/setting*"); //访问setting的时候才访问这个拦截器;，用于权限验证
         super.addInterceptors(registry);
